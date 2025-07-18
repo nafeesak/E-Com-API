@@ -1,0 +1,15 @@
+ProductController
+Get Product - Done.
+Add a Product - Done.
+Get one Product - Done.
+Rate a Product- Done.
+Filter Product- Done.
+Add item to cart- Done.
+get item from cart- Done.
+Remove item from cart- Done.
+
+UserController
+Sign Up - email ,name ,password, type of user(customer,seller) - Done.
+Sign In-email,password - Done.
+
+https://www.openapis.org/
