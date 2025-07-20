@@ -9,6 +9,9 @@ import bodyParser from 'body-parser'
 //import basicAuthorizer from './src/middleware/basicAuth.middleware.js';
 import jwtAuth from './src/middleware/jwt.middleware.js';
 
+import loggerMiddleware from './src/middleware/logger.middleware.js';
+import { ApplicationError } from './src/error-handler/applicationError.js';
+
 import apiDocs from './swagger.json' with { type: 'json' };
 //2. Create Server
 const server=express();
@@ -43,15 +46,32 @@ server.use(bodyParser.json())
 server.use("/api-docs", 
 swagger.serve, 
 swagger.setup(apiDocs))
+//logData
+
+
+server.use(loggerMiddleware);
+
+//products
 server.use('/api/products',jwtAuth,productRouter)
 server.use('/api/users',userRouter)
 
-server.use('/api/cart',jwtAuth,cartRouter)
+server.use('/api/cart',loggerMiddleware,jwtAuth,cartRouter)
 
 
 //3.default request handler
 server.get('/',(req,res)=>{
     res.send("Welcome to E-commerce API")
+})
+//Error handler middleware
+server.use((err,req,res,next)=>{
+    console.log(err);
+    //aplication error
+      if (err instanceof ApplicationError){
+        res.status(err.code).send(err.message);
+      }
+    
+    //server error
+    res.status(500).send('Oops! Something went wrong... Please try again later!')
 })
 //4. Middleware to handle 404 request
 //5. Server listeninng port

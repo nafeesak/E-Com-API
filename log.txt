@@ -1,0 +1,17 @@
+
+ Sat Jul 19 2025 17:23:52 GMT+0530 (India Standard Time) - /api/cart?productId=2&quantity=1 - undefined
+ Sat Jul 19 2025 17:24:17 GMT+0530 (India Standard Time) - /api/cart - undefined{"level":"info","message":"/api/cart?productId=2&quantity=1 - undefined","service":"request-logging"}
+{"level":"info","message":"/?productId=2&quantity=1 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/cart - undefined","service":"request-logging"}
+{"level":"info","message":"/ - undefined","service":"request-logging"}
+{"level":"info","message":"/api/product/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/product/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=2&productId=10&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=20&productId=1&rating=4 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=20&productId=1&rating=90 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=20&productId=1&rating=90 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/products/rate?userId=2&productId=1&rating=90 - undefined","service":"request-logging"}

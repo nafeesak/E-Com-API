@@ -1,15 +1,31 @@
 ProductController
-Get Product - Done.
-Add a Product - Done.
-Get one Product - Done.
-Rate a Product- Done.
-Filter Product- Done.
-Add item to cart- Done.
-get item from cart- Done.
-Remove item from cart- Done.
+Get Products - Done.
+Add a product - Done.
+Get one product - Done.
+Filter Product - Done.
+Rate product. - Done.
+Add items to Cart - Done.
+Get items of cart - Done.
+Remove items from cart. - Done.
 
 UserController
-Sign Up - email ,name ,password, type of user(customer,seller) - Done.
-Sign In-email,password - Done.
+Signup - Email, Name, Password, TypeOfUser(customer, seller) - Done.
+Signin - (Email, Password) - Done.
+
+
+Folder Structure
+Route configuration
+Creating APIs
+Different API Methods
+Middlewares
+Route parameters
+Query parameters
+Testing api using postman
+Securing Api using jwt token
+Documenting API using using swagger
+CORS
+Logging
+Error Handling,password - Done.
 
 https://www.openapis.org/
+https://restfulapi.net/resource-naming/
