@@ -15,3 +15,15 @@
 {"level":"info","message":"/api/products/rate?userId=20&productId=1&rating=90 - undefined","service":"request-logging"}
 {"level":"info","message":"/api/products/rate?userId=20&productId=1&rating=90 - undefined","service":"request-logging"}
 {"level":"info","message":"/api/products/rate?userId=2&productId=1&rating=90 - undefined","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"nafeesa\",\"email\":\"nafeesa@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"anas\",\"email\":\"anas@gmail.com\",\"password\":\"password123\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"email\":\"shahab@gmail.com\",\"password\":\"password123\",\"name\":\"Shahab\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"email\":\"shahab@gmail.com\",\"password\":\"password123\",\"name\":\"Shahab\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"email\":\"shahab@gmail.com\",\"password\":\"password123\",\"name\":\"Shahab\",\"type\":\"seller\"}","service":"request-logging"}

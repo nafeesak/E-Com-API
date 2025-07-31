@@ -5,7 +5,11 @@ import { UserController } from './user.controller.js';
 const userRouter=express.Router()
 const userController=new UserController()
 //All the paths
-userRouter.post('/signup',userController.signUpUser);
-userRouter.post('/signin',userController.signInUser);
+userRouter.post('/signup',(req,res)=>{
+    userController.signUpUser(req,res)
+});
+userRouter.post('/signin',(req,res)=>{
+    userController.signInUser(req,res)
+});
 
 export default userRouter;

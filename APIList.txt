@@ -29,3 +29,7 @@ Error Handling,password - Done.
 
 https://www.openapis.org/
 https://restfulapi.net/resource-naming/
+https://mongodb-node.netlify.app/docs/drivers/node/current/
+hashing:bicrypt
+.env: dotenv
+//dont commit .env and nodemodules .gitignore
