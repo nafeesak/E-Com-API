@@ -1,24 +1,34 @@
 import CartModel from "./cart.model.js";
+import CartItemsRepository from "./cart.repository.js";
 export  class CartController{
-    add(req,res){
-       const {productId,quantity}=req.query;
+    constructor(){
+            this.cartItemsRepository=new CartItemsRepository();
+        }
+   async add(req,res){
+    try{
+        const {productId,quantity}=req.body;
        const userId=req.userId;
-       CartModel.add(productId,userId,quantity);
+      await this.cartItemsRepository.add(productId,userId,quantity);
        res.status(201).send("Cart is updated")
+    }catch(err){
+           // console.log(err)
+              return res.status(400).send("Something went wrong")     
+            }
+       
     }
-    get(req,res){
+    async get(req,res){
         const userId=req.userId;
-        const items=CartModel.get(userId);
+        const items= await this.cartItemsRepository.get(userId);
         return res.status(200).send(items)
     }
-    delete(req,res){
+   async delete(req,res){
         const userId=req.userId;
         const cartItemId=req.params.id;
-        const error=CartModel.delete(cartItemId,userId);
-        if(error){
-            return res.status(404).send(error)
-        }else{
-            return res.status(200).send('Cart Item is removed ')
-        }
+        const isDeleted=await this.cartItemsRepository.delete(cartItemId,userId);
+        if(!isDeleted){
+            return res.status(404).send("Item not found")
+        }return res
+        .status(200)
+        .send('Cart item is removed');
     }
 }

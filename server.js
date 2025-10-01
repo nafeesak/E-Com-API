@@ -16,6 +16,7 @@ import { ApplicationError } from './src/error-handler/applicationError.js';
 
 import apiDocs from './swagger.json' with { type: 'json' };
 import {connectToMongodb} from './src/config/mongodb.js';
+import orderRouter from './src/features/orders/order.routes.js';
 //2. Create Server
 const server=express();
 //CORS policy configuartion
@@ -60,7 +61,8 @@ server.use('/api/products',jwtAuth,productRouter)
 server.use('/api/users',userRouter)
 
 server.use('/api/cart',loggerMiddleware,jwtAuth,cartRouter)
-
+//order
+server.use('/api/orders',jwtAuth,orderRouter)
 
 //3.default request handler
 server.get('/',(req,res)=>{

@@ -2,12 +2,15 @@ import { getDB } from "../../config/mongodb.js";
 import { ApplicationError } from "../../error-handler/applicationError.js";
 
 export default class UserRepository{
+    constructor(){
+        this.collection="users"
+    }
     async signUp(newUser){
         try{
         // 1.Get Database
         const db=getDB();
         //2. Get the Collection
-        const collection = db.collection("users")
+        const collection = db.collection(this.collection)
         //3. Insert the collection
         await collection.insertOne(newUser)
          return newUser;
@@ -21,7 +24,7 @@ export default class UserRepository{
         // 1.Get Database
         const db=getDB();
         //2. Get the Collection
-        const collection = db.collection("users")
+        const collection = db.collection(this.collection)
         //3. Find the collection
         return await collection.findOne({email})
         }

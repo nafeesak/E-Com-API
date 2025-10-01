@@ -5,12 +5,12 @@ export default class CartModel{
         this.quantity=quantity;
         this.id=id;
     }
-    static add(productId,userId,quantity){
-        const cartItem=new CartModel(productId,userId,quantity)
-        cartItem.id=cartItems.length+1;
-        cartItems.push(cartItem);
-        return cartItem;
-    }
+    // static add(productId,userId,quantity){
+    //     const cartItem=new CartModel(productId,userId,quantity)
+    //     cartItem.id=cartItems.length+1;
+    //     cartItems.push(cartItem);
+    //     return cartItem;
+    // }
     static get(userId){
         return cartItems.filter((i)=>i.userId==userId)
     }

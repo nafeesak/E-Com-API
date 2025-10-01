@@ -1,0 +1,24 @@
+Place Order.
+
+1. Get cart items of user, calulcate the totalAmount.
+2. Create a record for order.
+3. Reduce the stock(products quantity).
+4. Clear the cart.
+
+5. Deduct the payment.
+6. Inform to sellers.
+7. Inform to coureir.
+
+270000
+264000
+=534000
+
+//Replicate
+Find where MongoDB is installed, usually at C:\Program Files\MongoDB\Server``\bin.
+Open Command Prompt and navigate to that folder using cd, for example: cd "C:\Program Files\MongoDB\Server\6.0\bin".
+Now run: mongod --dbpath "C:\data\db" --replSet RS0
+Alternatively, add the MongoDB bin folder to your system PATH environment variable so you can run mongod from any directory.
+C:\Program Files\MongoDB\Server\8.0\data
+mongod —replSet rs0 –dbpath “C:\Program Files\MongoDB\Server\8.0\data”
+
+mongod --dbpath "C:\data\db" --replSet "rs0"

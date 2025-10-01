@@ -8,12 +8,26 @@ const productController=new ProductController()
 //All the paths
 //http://localhost:3200/api/products/rate?userId=2&productId=1&rating=4
 // //query parameter :localhost:3200/api/products/filter?minPrice=10&maxPrice=20&category=Catergory1
-productRouter.post('/rate',productController.rateProduct);
-productRouter.get('/filter',productController.filterProducts);
+productRouter.post('/rate',(req,res)=>{
+    productController.rateProduct(req,res)
+    });
+productRouter.get('/filter',(req,res)=>{
+    productController.filterProducts(req,res)
+    });
 //Route paramter : localhost:3200/api/products/:id
-productRouter.get('/',productController.getAllProducts);
-productRouter.post('/',upload.single('imageUrl'),productController.addProduct)
-productRouter.get('/:id',productController.getOneProduct);
+productRouter.get('/',(req,res)=>{
+    productController.getAllProducts(req,res)
+    });
+productRouter.post('/',upload.single('imageUrl'),(req,res)=>{
+    productController.addProduct(req,res)
+    });
+    
+productRouter.get("/averagePrice", (req, res, next)=>{
+  productController.averagePrice(req, res)
+});
+productRouter.get('/:id',(req,res)=>{
+    productController.getOneProduct(req,res)
+    });
 
 export default productRouter;
 

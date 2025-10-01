@@ -32,7 +32,7 @@ export class UserController{
             return res.status(400).send("Incorrect Creditial")
              }else{
             // 3.Create a Token //Dont store or pass password in payloads
-            const token=jwt.sign({userID:result.id,email:result.email},
+            const token=jwt.sign({userID:user._id,email:user.email},
                 process.env.JWT_SECRET,
                 {
                     expiresIn:'2d'
