@@ -17,6 +17,9 @@ import { ApplicationError } from './src/error-handler/applicationError.js';
 import apiDocs from './swagger.json' with { type: 'json' };
 import {connectToMongodb} from './src/config/mongodb.js';
 import orderRouter from './src/features/orders/order.routes.js';
+import { connectusingMongoose } from './src/config/mongooseConfig.js';
+import { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 //2. Create Server
 const server=express();
 //CORS policy configuartion
@@ -71,6 +74,10 @@ server.get('/',(req,res)=>{
 //Error handler middleware
 server.use((err,req,res,next)=>{
     console.log(err);
+    //validation error
+    if(err instanceof mongoose.Error.ValidationError){
+        res.status(400).send(err.message);
+      }
     //aplication error
       if (err instanceof ApplicationError){
         res.status(err.code).send(err.message);
@@ -88,5 +95,6 @@ const PORT=3200;
 
 server.listen(PORT,(req,res)=>{
     console.log(`Server listening on ${PORT}`)
-    connectToMongodb();
+    //connectToMongodb();
+    connectusingMongoose();
 })

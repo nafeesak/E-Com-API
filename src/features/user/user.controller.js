@@ -7,7 +7,7 @@ export class UserController{
     constructor(){
         this.userRepository=new UserRepository()
     }
-    async signUpUser(req,res){
+    async signUpUser(req,res,next){
         try{
         const {name,email,password,type}=req.body;
         const hashedPassword=await bcrypt.hash(password,12)//Salt value can be in between 10-20
@@ -15,7 +15,8 @@ export class UserController{
         await this.userRepository.signUp(user)
         res.status(201).send(user);
         } catch(err){
-         throw new ApplicationError("Something went wrong",500)
+            next(err)
+         //throw new ApplicationError("Something went wrong",500)
         }
 
     }
@@ -44,9 +45,22 @@ export class UserController{
         }
     }catch(err){
         //console.log(err)
-         throw new ApplicationError("Something went wrong",500);
+        next(err)
+        // throw new ApplicationError("Something went wrong",500);
         
         }
        
+    }
+    async passwordReset(req,res,next){
+        try{
+            const {newPassword}=req.body;
+            const userID=req.userID;
+            const hashedPassword=await bcrypt.hash(newPassword,12);
+            await this.userRepository.updatePassword(userID,hashedPassword);
+            res.status(200).send("Password Updated Successfully")
+        }catch(err){
+            console.log(err)
+            throw new ApplicationError("Something went wrong",500)
+        }
     }
 }
